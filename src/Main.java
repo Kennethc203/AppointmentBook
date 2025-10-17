@@ -28,35 +28,19 @@ public class Main {
         AppointmentBook[] books = new AppointmentBook[1000];
         File paper = new File("schedules.txt");
         Scanner notPrinter = new Scanner(paper);
-        boolean[][][] superSchedule = new boolean[1000][8][60];
-        int totalAppointments = 0;
-        int min;
-        int hour;
-        int periodBegin;
-        int periodEnd;
-        int periodMinutes;
-        for (int i = 0; i < 1000; i++) {
-            books[i] = new AppointmentBook(superSchedule[i]);
-            min = 0;
-            hour = 0;
-            for (int j = 0; j <= 480; j++) {
-                superSchedule[i][hour][min] = notPrinter.nextBoolean();
-                min++;
-                if (min == 60) {
-                    min = 0;
-                    hour++;
-                    if (hour > 7) hour = 7;
-                }
+        SupaList[] moreSchedules = new SupaList[1000];
 
 
-            periodBegin = notPrinter.nextInt();
-            periodEnd = notPrinter.nextInt();
-            periodMinutes = notPrinter.nextInt();
-            if (books[i].makeAppointment(periodBegin, periodEnd, periodMinutes)) {
-                totalAppointments++;
-                }
+        moreSchedules[0] = new SupaList();
+        books[0] = new AppointmentBook(moreSchedules[0].notSupaList);
+        int min = 0;
+        int hour = 0;
+        for (int j = 0; j < 484; j++){
+            if (notPrinter.hasNextBoolean()){
+                moreSchedules[0].notSupaList[hour][min] = notPrinter.nextBoolean();
             }
-            System.out.println(totalAppointments);
         }
+
+
     }
-}
+    }
