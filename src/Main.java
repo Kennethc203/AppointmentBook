@@ -3,13 +3,14 @@ import java.io.File;
 import java.io.FileNotFoundException;
 public class Main {
     public static void main(String[] args) throws FileNotFoundException {
-        /*
+
         boolean[][] schedule = new boolean[8][60];
         AppointmentBook somethingOrOther = new AppointmentBook(schedule);
         for(int i = 10; i < 15; i++) {schedule[1][i] = true;}
         for(int i = 30; i < 45; i++) {schedule[1][i] = true;}
         for(int i = 50; i < 60; i++) {schedule[1][i] = true;}
         somethingOrOther.printPeriod(2);
+        System.out.println(somethingOrOther.findFreeBlock(2, 15) + somethingOrOther.findFreeBlock(2, 9) + somethingOrOther.findFreeBlock(2, 20));
         schedule = new boolean[8][60];
         for(int i = 25; i < 30; i++) {schedule[1][i] = true;}
         for(int i = 0; i < 15; i++) {schedule[2][i] = true;}
@@ -22,9 +23,16 @@ public class Main {
             why.printPeriod(period);
         }
         why.printPeriod(4);
-        why.makeAppointment(2, 4, 22);
+        System.out.println(why.makeAppointment(2, 4, 22));
+        System.out.println(why.makeAppointment(3, 4, 3));
+        System.out.println(why.makeAppointment(2, 4, 30));
         why.printPeriod(4);
-         */
+
+
+
+
+
+
         AppointmentBook[] books = new AppointmentBook[1000];
         File paper = new File("schedules.txt");
         Scanner notPrinter = new Scanner(paper);
