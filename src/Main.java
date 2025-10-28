@@ -1,8 +1,9 @@
 import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 public class Main {
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) throws IOException{
 
         boolean[][] schedule = new boolean[8][60];
         AppointmentBook somethingOrOther = new AppointmentBook(schedule);
@@ -66,6 +67,10 @@ public class Main {
             }
         }
         System.out.println(appointmentCount);
+
+        //Mr. Holmer's Method
+        System.out.println(AppointmentBook.read());
+
 
     }
     }
